@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标拖拽功能</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;padding:0;
+    }
+    a{
+        color:#0000ee;
+        text-decoration: none;
+    }
+    body{
+        font-size:12px;font-family: "微软雅黑";
+        background: url("images/baidu_demo.png") center top no-repeat;
+    }
+    .login{
+     float: right;
+     padding:10px 40px;
+    }
+    .mask{
+       display: none;
+       background: #000;
+        opacity: 0.4;
+        z-index: 888;
+    }
+    .drag{
+      position:absolute;left:200px;top:200px;width:380px;
+      border: 1px solid #c1c1c1;
+      display: none;
+      z-index: 999;
+      background: #fff;
+
+    }
+    .drag .title{
+        padding:16px;
+        font-size:16px;
+        background: #f5f5f5;
+        color:#535353;
+        border-bottom: 1px solid #efefef;
+
+    }
+    .drag .title:hover{
+        cursor: move;
+    }
+    .drag .title .close-btn{
+       float:right;
+        width:16px;height:16px;
+        background: url("images/close_def.png" ) left center no-repeat;
+    }
+    .drag .title .close-btn:hover{
+        background: url("images/close_hov.png") left center no-repeat;
+    }
+
+   .drag .container{
+       padding: 30px 16px;
+   }
+
+    .drag .container .btn{
+        margin-bottom: 12px;
+
+      color:#d5d5d5;
+    }
+    .drag .container .btn  .input-btn{
+        width:100%;
+        padding:12px 0;
+        text-indent: 25px;font-size:16px;color:#D5D5D5;
+        border:1px solid #D5D5D5;
+    }
+    .drag .container .btn  .user{
+        background: url("images/input_username.png") 0 center no-repeat;
+    }
+    .drag .container .btn  .password{
+        background: url("images/input_password.png") 0 center no-repeat;
+    }
+    .drag .container .forget{
+        height:25px;line-height:25px;text-align: right;width:100%;
+    }
+    .drag .container .denglu{
+        height:50px ;line-height:50px;text-align: center;
+        background: #3b7ae3;
+    }
+    .drag .container .denglu a{
+        text-decoration: none;
+        font-size: 16px;color:#fff;
+    }
+</style>
+<body>
+  <div class="drag" id="drag">
+      <div class="title" id="title">
+          登录通行证
+          <a href="#" class="close-btn" id="close-btn"></a>
+      </div>
+      <div class="container" id="container">
+          <div class="btn ">
+              <input type="input" class="input-btn user" value="手机/邮箱/用户名"/>
+          </div>
+          <div class="btn ">
+              <input type="input" class="input-btn  password" value="密码"/>
+          </div>
+          <div class="forget">
+              <a href="#">忘记密码</a>
+          </div>
+          <div class="denglu">
+              <a href="#">登录</a>
+          </div>
+          <div class="forget">
+              <a href="#">立即注册</a>
+          </div>
+      </div>
+  </div>
+  <a href="#" class="login" id="login">登录</a>
+  <div class="mask" id="mask"></div>
+  <script src="drag.js"></script>
+
+</body>
+</html>
